@@ -23,5 +23,9 @@
         #e7e7e7 0%, #e7e7e7 1%,
         #1a1a1a 100%
     );
+    /* ниже будут перменные для ширины и высоты блока */
+    --block-width: clamp(375px, 700px, 90vw);
+    --block-height: clamp(327px, 368px, 90vw);
+
 
 }

@@ -18,11 +18,41 @@
   font-size: var(--main-font-size);
   background-color: grey;
   background-image: var(--gradient-background);
+  background-attachment: fixed;
 }
 
 .main {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.header {
+  display: flex;
+  width: var(--block-width);
+  height: var(--block-height);
+  margin: 100px auto;
   justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border: 2px solid black;
+}
+
+.header__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__text {
+  font-size: 23px;
+  font-family: var(--accent-font);
+}
+
+.header__title {
+  font-size: 65px;
 }
 
 .card__wrap {
@@ -30,6 +60,7 @@
   flex-direction: column;
   max-width: 700px;
   border: 2px solid black;
+  background-color: #ffffff;
 }
 
 .image__wrap {
