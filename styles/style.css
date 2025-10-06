@@ -37,6 +37,8 @@
   align-items: center;
   background-color: #ffffff;
   border: 2px solid black;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .header__wrap {
@@ -104,24 +106,49 @@
   flex-direction: column;
 }
 
-.card__wrap .card__button {
+.card__wrap .card__like-button {
   align-self: flex-end;
 }
 
-.card__button {
+.card__icon-button {
+  border: none;
+  background-color: transparent;
+  margin-right: 12px;
+  padding: 0;
+}
+
+.buttons__wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.card__like-button {
   font-family: var(--accent-font);
   font-size: var(--button-font-size);
   padding: 12.5px 35px;
   background-color: transparent;
   border: 2px solid black;
-  margin: 25px;
+  margin: 25px 25px 25px 0px;
   width: max-content;
 }
 
 .button__save {
-  margin: 0;
-  padding: 14px;
+  background-color: transparent;
+  font-family: var(--accent-font);
+  font-size: var(--button-font-size);
+  border: none;
+}
+.bottom__button-wrap {
+  display: flex;
   background-color: #ffffff;
+  border: 2px solid black;
+  padding: 14px 10px;
+}
+
+.bottom__button-wrap .card__icon-button {
+  margin-right: 0;
+  margin-left: 8px;
 }
 
 .button__pic {
