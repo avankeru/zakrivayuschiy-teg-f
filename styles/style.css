@@ -69,9 +69,7 @@
 
 .image__wrap {
   position: relative;
-  height: 696px;
-  border-block-start: 2px solid black;
-  border-block-end: 2px solid black;
+  height: 100%;
 }
 
 .card__image {
@@ -102,7 +100,7 @@
   margin: 25px;
   margin-bottom: 0;
   display: flex;
-  gap: 25px;
+  gap: 26px;
   flex-direction: column;
 }
 
@@ -115,6 +113,7 @@
   background-color: transparent;
   margin-right: 12px;
   padding: 0;
+  width: max-content;
 }
 
 .buttons__wrap {
@@ -126,11 +125,12 @@
 .card__like-button {
   font-family: var(--accent-font);
   font-size: var(--button-font-size);
-  padding: 12.5px 35px;
+  padding: 10px 35px;
   background-color: transparent;
   border: 2px solid black;
   margin: 25px 25px 25px 0px;
   width: max-content;
+  height: 38px;
 }
 
 .button__save {
@@ -143,12 +143,12 @@
   display: flex;
   background-color: #ffffff;
   border: 2px solid black;
-  padding: 14px 10px;
+  padding:  12px;
 }
 
 .bottom__button-wrap .card__icon-button {
   margin-right: 0;
-  margin-left: 8px;
+  margin-left: 7px;
 }
 
 .button__pic {
@@ -163,3 +163,44 @@
   align-self: self-end;
   right: 170px;
 }
+
+@media (max-width: 1440px) {
+  .card__image {
+    height: 696px;
+  }
+}
+@media (max-width: 375px) {
+  .header__text {
+    font-size: 14px;
+  }
+  .header__title {
+    font-size: 49px;
+  }
+
+  .card__image {
+    height: 371px;
+  }
+  .bottom__button-wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .bottom__button-wrap .card__icon-button {
+    margin: 0;
+    padding-top: 3px;
+  }
+  .button__pic {
+    height: 28px;
+  }
+}
+/* Задачи:
+1. Анимации + состояние иконок + кнопок :
+a. При наведении (+ для иконки)
+b. При Табуляции
+c. При нажатии 
+d. При зажатии
+e. Статус "Liked"
+----------------------------------------------
+1. Настройка шрифта как резерв для старых браузеров fonts.css
+2. Медиазпросы под width < 1440px, width >= 375px
+*/

@@ -25,7 +25,9 @@
     );
     /* ниже будут перменные для ширины и высоты блока */
     --block-width: clamp(375px, 700px, 90vw);
-    --block-height: clamp(327px, 368px, 90vw);
+    --block-height: clamp(327px, 368px, 90vh);
 
-
+    @media(max-width:375px) {
+        --block-height: clamp(327px, 368px, 0vh);
+    }
 }
