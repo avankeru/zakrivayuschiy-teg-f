@@ -10,11 +10,32 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 */
 
+@supports not (text-stroke: 1px)
+{
+  .card__label {
+    -webkit-text-stroke: none;
+    text-stroke: none;
+    text-shadow: 1px 1px 0px white, 
+     -1px -1px 0px white, 
+      1px -1px 0px white, 
+      -1px 1px 0px white;
+  }
+}
+@supports not (-webkit-text-stroke: 1px) {
+  .card__label {
+    -webkit-text-stroke: none;
+    text-stroke: none;
+    text-shadow: 1px 1px 0px white,
+     -1px -1px 0px white,
+      1px -1px 0px white,
+      -1px 1px 0px white;
+  }
+}
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
-  font-weight: var(--wgt-text);
+  font-variation-settings: 'wght' var(--wgt-text);
   font-size: var(--main-font-size);
   background-color: grey;
   background-image: var(--gradient-background);
@@ -31,7 +52,6 @@
 .header {
   display: flex;
   width: var(--block-width);
-  height: var(--block-height);
   margin: 100px auto;
   justify-content: center;
   align-items: center;
@@ -39,6 +59,7 @@
   border: 2px solid black;
   flex-direction: column;
   gap: 20px;
+  padding: 127px 122.5px;
 }
 
 .header__wrap {
@@ -50,12 +71,12 @@
 
 .header__text {
   text-transform: uppercase;
-  font-size: 23px;
+  font-size: var(--dinamic-font-text);
   font-family: var(--accent-font);
 }
 
 .header__title {
-  font-size: 65px;
+  font-size: var(--dinamic-font-title);
 }
 
 .card__wrap {
@@ -91,7 +112,7 @@
 }
 
 .card__title {
-  font-weight: var(--wgt-accent);
+  font-variation-settings: 'wght' var(--wgt-accent);
   font-size: var(--main-font-size);
   padding: 4px 10px;
 }
@@ -170,6 +191,10 @@
   }
 }
 @media (max-width: 375px) {
+  .header {
+    
+padding: 121px 16px;
+  }
   .header__text {
     font-size: 14px;
   }

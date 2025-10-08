@@ -6,6 +6,8 @@
     --wgt-accent: 715;
     --main-font-size: 18px;
     --button-font-size: 14px;
+    --dinamic-font-title: clamp(49px, 65px, 65px);
+    --dinamic-font-text: clamp(14px, 23px, 23px);
     /* Ниже будут переменные для градиент фона */
     --gradient-background:
     repeating-linear-gradient(
