@@ -132,9 +132,14 @@
 .card__icon-button {
   border: none;
   background-color: transparent;
-  margin-right: 12px;
+  margin-right: 6px;
   padding: 0;
   width: max-content;
+  padding: 7px 5.5px;
+}
+
+.is-liked {
+  color: red;
 }
 
 .buttons__wrap {
@@ -147,11 +152,57 @@
   font-family: var(--accent-font);
   font-size: var(--button-font-size);
   padding: 10px 35px;
-  background-color: transparent;
+  background-color: white;
   border: 2px solid black;
   margin: 25px 25px 25px 0px;
-  width: max-content;
+  width: 130px;
   height: 38px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.card__like-button::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%); /* Начинаем с полного смещения влево */
+  transition: transform 0.5s ease-in-out; /* Параметры перехода */
+}
+
+.card__like-button:hover::before {
+  transform: translateX(0); /* При наведении перемещаем псевдоэлемент в исходное положение */
+}
+
+.card__like-button .button__text {
+  color: white; /* Цвет текста */
+  mix-blend-mode: difference; /* Режим смешивания */
+  position: relative; /* Относительное позиционирование */
+  z-index: 1; /* Убедимся, что текст выше псевдоэлемента */
+}
+
+
+
+.card__like-button:hover {
+  background-color: black;
+  color: #ffffff;
+}
+
+.card__icon-button:focus {
+  outline: 2px solid black;
+}
+
+.card__like-button:focus {
+  outline: transparent;
+  background-color: #ffffff;
+  color: black;
+  box-shadow: 2px 2px 0px black;
 }
 
 .button__save {
@@ -225,7 +276,6 @@ b. При Табуляции
 c. При нажатии 
 d. При зажатии
 e. Статус "Liked"
+is-liked написать свойство для красного цвета.
 ----------------------------------------------
-1. Настройка шрифта как резерв для старых браузеров fonts.css
-2. Медиазпросы под width < 1440px, width >= 375px
-*/
+
