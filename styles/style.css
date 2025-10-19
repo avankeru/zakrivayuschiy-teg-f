@@ -128,42 +128,68 @@
 .card__wrap .card__like-button {
   align-self: flex-end;
 }
+/* qsdasdasdasdasdasdasdasdasdasdasdasdasda */
+
+.like-icon img {
+  transition: content 150ms ease;
+}
+
+.like-icon:hover img {
+  animation: heartHoverAnimation  150ms steps(1) forwards;
+}
+
+.like-icon:not(:hover) img {
+  content: url('../svg/heart-initial.svg');
+}
+
+/* asdasdasdasdasdasdasdasdasdasdasdasdasda */
 
 .card__icon-button {
   border: none;
   background-color: transparent;
-  margin-right: 6px;
+  display: flex;
+  width: 27px;
+  height: 24px;
   padding: 0;
-  width: max-content;
-  padding: 7px 5.5px;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
 }
 
-.is-liked {
-  color: red;
-}
 
 .buttons__wrap {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 12px;
 }
 
 .card__like-button {
-  font-family: var(--accent-font);
-  font-size: var(--button-font-size);
   padding: 10px 35px;
-  background-color: white;
-  border: 2px solid black;
-  margin: 25px 25px 25px 0px;
   width: 130px;
   height: 38px;
+  margin: 25px 25px 25px 0px;
+  border: 2px solid black;
+}
+
+.disket__button {
+  border: none;
+}
+
+.card__like-button, .card__disket-button {
+  font-family: var(--accent-font);
+  font-size: var(--button-font-size);
+  background-color: white;
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.card__like-button::before {
+.dialog-wrap .card__disket-button {width: 293px;padding: 12.5px 0;align-self: center;/* margin-bottom: 30px; */}
+
+.card__disket-button::before, .card__like-button::before {
   content: "";
   display: block;
   width: 100%;
@@ -176,29 +202,22 @@
   transition: transform 0.5s ease-in-out; /* Параметры перехода */
 }
 
-.card__like-button:hover::before {
+.card__disket-button:hover::before, .card__like-button:hover::before {
   transform: translateX(0); /* При наведении перемещаем псевдоэлемент в исходное положение */
 }
 
-.card__like-button .button__text {
+.button__text {
   color: white; /* Цвет текста */
   mix-blend-mode: difference; /* Режим смешивания */
   position: relative; /* Относительное позиционирование */
   z-index: 1; /* Убедимся, что текст выше псевдоэлемента */
 }
 
-
-
-.card__like-button:hover {
-  background-color: black;
-  color: #ffffff;
-}
-
 .card__icon-button:focus {
   outline: 2px solid black;
 }
 
-.card__like-button:focus {
+.card__disket-button:focus, .card__like-button:focus {
   outline: transparent;
   background-color: #ffffff;
   color: black;
@@ -210,12 +229,19 @@
   font-family: var(--accent-font);
   font-size: var(--button-font-size);
   border: none;
+  position: relative;
 }
+
 .bottom__button-wrap {
   display: flex;
   background-color: #ffffff;
   border: 2px solid black;
-  padding:  12px;
+  padding: 13px 10px;
+}
+
+.card__button {
+  border: none;
+  background: transparent;
 }
 
 .bottom__button-wrap .card__icon-button {
@@ -235,7 +261,44 @@
   align-self: self-end;
   right: 170px;
 }
+/* qweqweqweqweqweqweqweqweqweqweqweqwe */
 
+.dialog-wrap {
+  display: none;
+}
+
+.dialog-wrap::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  padding: 20px 20px 0 20px;
+  max-width: 295px;
+  align-items: center;
+  gap: 20px;
+}
+
+.dialog-wrap[open] {
+  display: flex;
+  padding: 0;
+  gap: 30px;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.disket-wrap .button__text {text-transform: uppercase;font-family: var(--accent-font);font-size: var(--button-font-size);line-height: 150%;}
+
+.disket-wrap .button__pic {
+  width: 39px;
+  height: 39px;
+}
+.disket-wrap .card__icon-button {
+  width: 39px;
+  height: 39px;
+}
+
+/* qweqweqweqweqweqweqweqweqweqweqweqweqwe */
 @media (max-width: 1440px) {
   .card__image {
     height: 696px;
@@ -243,12 +306,13 @@
 }
 @media (max-width: 375px) {
   .header {
-    
-padding: 121px 16px;
+    padding: 121px 16px;
   }
+
   .header__text {
     font-size: 14px;
   }
+
   .header__title {
     font-size: 49px;
   }
@@ -256,18 +320,35 @@ padding: 121px 16px;
   .card__image {
     height: 371px;
   }
+
   .bottom__button-wrap {
     flex-direction: column;
     align-items: center;
     gap: 5px;
   }
+
   .bottom__button-wrap .card__icon-button {
     margin: 0;
     padding-top: 3px;
   }
+
   .button__pic {
     height: 28px;
   }
+
+  .modal-content {
+    width: 90%;
+  }
+
+  .dialog-wrap[open] .modal-content {
+    grid-template-columns: auto;
+    /* Другие стили для адаптивности */
+  }
+
+  .dialog-wrap .card__disket-button {
+    width: 261px;
+  }
+  
 }
 /* Задачи:
 1. Анимации + состояние иконок + кнопок :

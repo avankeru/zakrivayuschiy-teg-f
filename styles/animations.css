@@ -9,3 +9,16 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+@keyframes heartHoverAnimation {
+    0% {
+        content: url('../svg/heart-initial.svg');
+    }
+    33% {
+        content: url('../svg/heart-starting.svg');
+    }
+    66%, 100% {
+        content: url('../svg/heart-glow.svg');
+    }
+}
+
