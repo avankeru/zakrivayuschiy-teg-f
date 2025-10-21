@@ -22,3 +22,11 @@
     }
 }
 
+@keyframes heartHoldAnimation {
+  0% { content: url('../svg/heart-initial.svg'); }
+  16.67% { content: url('../svg/heart-hold-starting.svg'); }
+  33.33% { content: url('../svg/heart-hold-glow.svg'); }
+  50% { content: url('../svg/heart-hold-big.svg'); }
+  66.67% { content: url('../svg/heart-hold-sparkles.svg'); }
+  83.33%, 100% { content: url('../svg/heart-hold-final.svg'); }
+}

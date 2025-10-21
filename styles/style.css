@@ -134,13 +134,23 @@
   transition: content 150ms ease;
 }
 
-.like-icon:hover img {
-  animation: heartHoverAnimation  150ms steps(1) forwards;
+.is-liked img{
+  content: url('../svg/heart-hold-final.svg');
 }
 
-.like-icon:not(:hover) img {
-  content: url('../svg/heart-initial.svg');
+.like-icon:hover img {
+  animation: heartHoverAnimation  0.5s steps(1) forwards;
 }
+
+/* .like-icon:not(:hover) img {
+  content: url('../svg/heart-initial.svg');
+} */
+
+.like-icon:active img {
+  animation: heartHoldAnimation 1s steps(6) forwards;
+}
+
+
 
 /* asdasdasdasdasdasdasdasdasdasdasdasdasda */
 
@@ -213,9 +223,9 @@
   z-index: 1; /* Убедимся, что текст выше псевдоэлемента */
 }
 
-.card__icon-button:focus {
+/* .card__icon-button:focus {
   outline: 2px solid black;
-}
+} */
 
 .card__disket-button:focus, .card__like-button:focus {
   outline: transparent;
